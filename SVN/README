@@ -1,0 +1,17 @@
+Taiji's home directory contains following:
+	- README: This file
+	- svnroot-mirror: Mirror of taiji's svn repository(svnroot)
+	- svn-book.pdf: http://svnbook.red-bean.com/en/1.7/svn-book.pdf
+	- do-sync.sh: Shell script do run svnsync.
+	- sync.log: Log of every sync operation, contains date followed by
+				stderr output, if any, of every do-sync operation.
+
+Mirror was setup by following the instructions in "svn-book.pdf"
+	-> Chapter 5 Repository Administration
+		-> Repository Maintenance
+			-> Repository Replicationo
+	DEST_URL	file:///home/taiji/svnroot-mirror
+	SOURCE_URL	svn+ssh://remote-backup@taji.csie.ntu.edu.tw/home/svnroot
+
+Crontab is used run "do-sync.sh" to synchronize taiji's svnroot and the 
+mirror for every 30 minutes.
